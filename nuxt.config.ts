@@ -24,7 +24,6 @@ const config: NuxtConfig = {
 
   buildModules: [
     '@nuxt/typescript-build',
-    '@nuxtjs/stylelint-module',
     '@nuxtjs/composition-api/module',
     '@pinia/nuxt',
   ],
