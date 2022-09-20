@@ -1,47 +1,19 @@
 <script lang="ts">
 import {
   defineComponent,
-  onMounted,
-  reactive,
-  useRoute,
 } from '@nuxtjs/composition-api'
-import { useAppStore } from '@/src/entities/app.store'
 
-function getName() {
-  const route = useRoute()
-  return route.value.name || ''
-}
 
 export default defineComponent({
   name: 'IndexPage',
-  setup() {
-    const appStore = useAppStore()
-    const state = reactive({
-      name: '',
-    })
-
-    function onShowName() {
-      state.name = getName()
-    }
-
-    onMounted(() => {
-      appStore.loading = true
-    })
-
-    return {
-      state,
-      onShowName,
-    }
-  },
 })
 </script>
 
 <template>
   <div :class="$style.page">
     <div>
-      {{ state.name }}
+      Home page
     </div>
-    <button @click="onShowName()">Show Name</button>
   </div>
 </template>
 
