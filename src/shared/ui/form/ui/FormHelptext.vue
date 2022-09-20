@@ -36,13 +36,13 @@ export default defineComponent({
 
   margin-top: 4px;
   text-align: left;
-  @include typography-h7-regular;
+  //@include typography-h7-regular;
 
   &__error {
-    color: $c-moscow;
+    color: red;
   }
   &__warning {
-    color: $c-butter;
+    color: orange;
   }
 }
 </style>

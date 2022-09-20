@@ -82,11 +82,11 @@ export default defineComponent({
   color: $c-grey-900;
   appearance: none;
   align-items: center;
-  @include typography-h6-regular;
+  //@include typography-h6-regular;
 
   &::placeholder {
     color: $c-grey-600;
-    @include typography-h6-regular;
+    //@include typography-h6-regular;
   }
   &:focus,
   &:focus-visible,
@@ -98,10 +98,10 @@ export default defineComponent({
   }
   &:invalid,
   &__error {
-    border-color: $c-moscow;
+    border-color: red;
   }
   &__warning {
-    border-color: $c-butter;
+    //border-color: $c-butter;
   }
   &[disabled] {
     cursor: not-allowed;

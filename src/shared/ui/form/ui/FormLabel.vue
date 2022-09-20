@@ -30,6 +30,6 @@ export default defineComponent({
   color: $c-grey-900;
   text-align: left;
   font-weight: 500 !important;
-  @include typography-h6-medium;
+  //@include typography-h6-medium;
 }
 </style>
