@@ -92,3 +92,16 @@
 - при натисканні на посилання в блоці навігації `/auth/login`, `/auth/secret` та `/bug` відправляти `name=navigation` `props={to: 'шлях на який буде перехід у посилання'}`
 - при успішній зміні пошти на сторінці `/auth/secret` надсилати `name=email_change` та `props={old_email: 'cтара пошта', new_email: 'нова пошта'}`
 - при успішному заході на `/auth/secret` надсилати `name=auth_secret_shown`
+
+10) Доробити систему аналітики таким чином, щоб всі відправлені дії зберігалися в глобальному стейті `analytics`.
+За основу можна взяти стейт `@/src/entities/app.store.ts` та створити `@/src/entities/analytics.store.ts`.
+
+У стейті має бути масив об'єктів з даними викликів методу `analytics.event`
+
+тип масиву об'єктів:
+```
+type AnalyticsEvent = {
+  name: string
+  props: {[key: string]: string | number | boolean}
+}
+```
