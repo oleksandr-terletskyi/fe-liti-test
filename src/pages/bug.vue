@@ -7,21 +7,17 @@
   } from '@nuxtjs/composition-api'
   import { useAppStore } from '@/src/entities/app.store'
 
-  function getName() {
-    const route = useRoute()
-    return route.value.name || ''
-  }
-
   export default defineComponent({
     name: 'BugPage',
     setup() {
+      const route = useRoute()
       const appStore = useAppStore()
       const state = reactive({
         name: '',
       })
 
       function onShowName() {
-        state.name = getName()
+        state.name = route.value.name || ''
       }
 
       onMounted(() => {
