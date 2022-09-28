@@ -5,12 +5,13 @@ import {
 
 
 export default defineComponent({
-  name: 'IndexPage',
+    name: "IndexPage",
 })
 </script>
 
 <template>
   <div :class="$style.page">
+    <TheNavigation/>
     <div>
       Home page
     </div>

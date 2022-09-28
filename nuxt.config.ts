@@ -20,7 +20,12 @@ const config: NuxtConfig = {
 
   plugins: [],
 
-  components: false,
+  components: [
+    {
+      path: './src/widgets',
+      pathPrefix: false,
+    },
+  ],
 
   buildModules: [
     '@nuxt/typescript-build',

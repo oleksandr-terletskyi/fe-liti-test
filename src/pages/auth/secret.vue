@@ -11,6 +11,7 @@ export default defineComponent({
 
 <template>
   <div :class="$style.page">
+    <TheNavigation/>
     <h2>
       Secret page
     </h2>
