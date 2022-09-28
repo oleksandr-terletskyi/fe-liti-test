@@ -5,15 +5,16 @@ import {
 
 
 export default defineComponent({
-  name: 'Login',
+    name: "Login",
 })
 </script>
 
 <template>
   <div :class="$style.page">
     <h2>
-      Login page
+      Login
     </h2>
+    <LoginForm/>
   </div>
 </template>
 
