@@ -5,7 +5,7 @@ import {
 
 
 export default defineComponent({
-  name: 'Secret',
+    name: "Secret",
 })
 </script>
 
@@ -15,6 +15,7 @@ export default defineComponent({
     <h2>
       Secret page
     </h2>
+    <EditForm/>
   </div>
 </template>
 
