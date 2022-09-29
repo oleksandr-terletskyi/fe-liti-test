@@ -6,28 +6,29 @@
     useRoute,
   } from '@nuxtjs/composition-api'
   import { useAppStore } from '@/src/entities/app.store'
-  
-  function getName() {
-    const route = useRoute()
-    return route.value.name || ''
-  }
-  
+
   export default defineComponent({
     name: 'BugPage',
     setup() {
-      const appStore = useAppStore()
+      const appStore = useAppStore();
+      const route = useRoute();
+
       const state = reactive({
         name: '',
       })
-  
+
       function onShowName() {
         state.name = getName()
       }
-  
+
+      function getName() {
+        return route.value.name || ''
+      }
+
       onMounted(() => {
         appStore.loading = true
       })
-  
+
       return {
         state,
         onShowName,
@@ -35,7 +36,7 @@
     },
   })
   </script>
-  
+
   <template>
     <div :class="$style.page">
       <div>
@@ -44,13 +45,13 @@
       <button @click="onShowName()">Show Name</button>
     </div>
   </template>
-  
+
   <style lang="scss" scoped module>
   @import '~/assets/scss/variables';
-  
+
   .page {
     $self: &;
-  
+
     // Desktop
     @media screen and (min-width: 1024) {
       width: 300px;
@@ -58,4 +59,3 @@
     }
   }
   </style>
-  
